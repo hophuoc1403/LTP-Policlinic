@@ -1,0 +1,10 @@
+.article {
+  background-color: var(--secondary-color);
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 20px;
+
+  &-content {
+    padding: 15px 20px;
+  }
+}

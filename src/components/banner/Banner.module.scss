@@ -1,0 +1,148 @@
+.banner {
+  position: relative;
+  width: 95.8vw;
+  overflow: hidden;
+  z-index: -333;
+
+  .banner-img {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  img {
+    animation: zoomImg 4s linear infinite;
+  }
+
+  .banner-content {
+    width: 70%;
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+    z-index: 10000000 !important;
+
+    p {
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 22px;
+    }
+
+    h3 {
+      font-weight: 800;
+      font-size: 35px;
+      color: #fff;
+    }
+    span {
+      font-weight: 600;
+      color: white;
+    }
+
+    button {
+      margin-top: 20px;
+      display: block;
+      padding: 10px 30px;
+      border-radius: 30px;
+      text-align: center;
+      background-color: var(--primary-color);
+      color: #fff;
+      font-weight: 600;
+      font-size: 23px;
+      border: #fff;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(2, 80, 113, 0.477),
+      rgba(2, 34, 79, 0.475)
+    );
+    top: 0;
+    z-index: 9;
+    // border-bottom-right-radius: 60%;
+  }
+}
+
+.under-banner {
+  // width: max-content;
+  // transform: translateY(-50px);
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  max-width: 95vw;
+  .content-box {
+    padding-block: 10px;
+    padding-inline: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    max-width: 100vw;
+    background-color: #fff;
+    border-radius: 10px;
+
+    .icon {
+      margin-inline: 25px;
+      font-size: 40px;
+      color: var(--primary-color);
+    }
+
+    .content {
+      h4 {
+        margin-block: 15px;
+      }
+      p {
+        font-size: 20px;
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: white !important;
+      transition: all 0.25s linear;
+
+      .icon {
+        color: #fff !important;
+      }
+    }
+  }
+  .content-box:last-child {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+
+    &:hover {
+      color: var(--primary-color) !important;
+      background-color: #fff !important;
+
+      .icon {
+        color: var(--primary-color) !important;
+      }
+    }
+
+    .icon {
+      color: white !important;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .banner {
+    width: 98vw !important;
+  }
+}
+
+@keyframes zoomImg {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}

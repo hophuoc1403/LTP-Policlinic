@@ -1,0 +1,228 @@
+.about {
+  .banner {
+    padding-block: 60px;
+    background-image: linear-gradient(
+        150deg,
+        #5ba2f483,
+        rgba(255, 255, 255, 0.591)
+      ),
+      url("../images/background.png");
+
+    background-size: fill;
+
+    h1 {
+      padding: 0 0 30px 50px;
+    }
+    p {
+      padding-left: 50px;
+      padding-bottom: 20px;
+      width: 70vw;
+    }
+  }
+
+  .history {
+    background-image: linear-gradient(150deg, #e1f1f5b1, #a8caf19d),
+      url("https://images.unsplash.com/photo-1663529472395-eaeac70b4315?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=900&q=60");
+
+    .quote {
+      text-align: center;
+
+      .icon {
+        font-size: 55px;
+        color: gray;
+      }
+
+      h3 {
+        font-size: 30px;
+      }
+    }
+
+    .detail {
+      padding: 30px;
+      border-radius: 15px;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+      h5 {
+        color: var(--primary-color);
+      }
+
+      h3 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+      p {
+      }
+    }
+  }
+
+  .service {
+    background-image: linear-gradient(to right bottom, #edf1fc97, #edf1fc),
+      url("../images/background.png");
+
+    &-box {
+      background-color: #fff;
+      max-width: 90vw;
+      margin: 20px auto;
+      border-radius: 30px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      padding: 30px 40px;
+
+      .icon {
+        display: inline-block;
+        padding: 10px 15px;
+        border-radius: 50%;
+        background-color: var(--secondary-color);
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      &:hover {
+        color: white;
+        background-color: var(--primary-color);
+        transform: translateY(-15px);
+        transition: all 0.125s linear;
+        cursor: pointer;
+
+        .icon {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .founder {
+    padding-inline: 20px;
+
+    .img {
+      min-width: 500px;
+      padding-inline: 20px;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    h6 {
+      margin-top: 10px;
+      color: var(--primary-color);
+    }
+    h3 {
+      font-size: 35px;
+      font-weight: bold;
+    }
+  }
+
+  .join {
+    background-image: url("../../../public/images/background2.png");
+    background-size: cover;
+    background-position: center;
+    width: max-content;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 50px;
+    text-align: center;
+
+    h3 {
+      margin-block: 20px;
+      font-weight: bold;
+      font-size: 35px;
+    }
+  }
+}
+
+.doctor {
+  padding-block: 100px;
+
+  &-logo {
+    margin-left: 100px;
+    position: relative;
+    width: 50%;
+
+    .picture {
+      width: max-content;
+      border-top-left-radius: 30%;
+      height: 500px;
+      box-shadow: 10px 10px 5px #ccc;
+    }
+    .picture-abs {
+      position: absolute;
+      width: 150px;
+      height: 200px;
+      border-radius: 15px;
+      left: -50px;
+      top: 60px;
+      box-shadow: 0px 6px 5px #ccc;
+    }
+    .picture-abs:nth-child(2) {
+      right: -0.5em !important;
+      left: unset;
+      top: 270px;
+    }
+  }
+
+  &-content {
+    padding: 20px;
+    h3 {
+      font-weight: bold;
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    &-box {
+      margin-top: 40px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0px 6px 5px #ccc;
+      padding: 20px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
+        margin-top: 10px;
+        font-size: 13px;
+      }
+
+      &:hover span {
+        color: var(--primary-color);
+        transition: 0.25s;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.doctor-list {
+  .card-custom {
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    overflow: hidden;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s linear;
+    margin-bottom: 50px;
+
+    &-img {
+      height: 400px;
+      overflow: hidden;
+    }
+
+    i {
+      font-size: 23px;
+
+      &:hover {
+        color: var(--primary-color);
+        transition: all 0.25s linear;
+      }
+    }
+
+    &:hover img {
+      transform: scale(1.2);
+      transition: all 0.25s linear;
+    }
+  }
+}

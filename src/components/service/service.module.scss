@@ -1,0 +1,22 @@
+.service {
+  .banner {
+    padding-block: 60px;
+    background-image: linear-gradient(
+        150deg,
+        #5ba2f483,
+        rgba(255, 255, 255, 0.591)
+      ),
+      url("../images/background.png");
+
+    background-size: fill;
+
+    h1 {
+      padding: 0 0 30px 50px;
+    }
+    p {
+      padding-left: 50px;
+      padding-bottom: 20px;
+      width: 70vw;
+    }
+  }
+}

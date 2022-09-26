@@ -1,0 +1,277 @@
+.about {
+  margin-block: 50px;
+
+  &-img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+
+  &-content {
+    margin-top: 15px;
+
+    h6 {
+      color: var(--primary-color);
+    }
+
+    h2 {
+      margin-block: 20px;
+      font-size: 45px;
+      font-weight: 700;
+    }
+
+    &-last {
+      img {
+        width: 80px;
+        height: 80px;
+      }
+
+      h4 {
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: unset;
+
+        span {
+          font-weight: 400;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.responsible {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(2, 42, 116, 0.486),
+      rgba(1, 28, 88, 0.578)
+    ),
+    url("../images/whatwedo1.png");
+  background-size: cover;
+
+  height: 500px;
+  color: #fff;
+  text-align: center;
+  padding-top: 150px;
+  padding-inline: 50px;
+
+  h6 {
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 35px;
+    font-weight: bold;
+    margin-block: 20px;
+  }
+  p {
+  }
+}
+
+#experiment {
+  -webkit-perspective: 800;
+  -webkit-perspective-origin: 50% 200px;
+
+  -moz-perspective: 800;
+  -moz-perspective-origin: 50% 200px;
+}
+
+.cube {
+  position: relative;
+  margin: 100px auto 0;
+  height: 300px;
+  width: 300px;
+  -webkit-transition: -webkit-transform 0.5s linear;
+  -webkit-transform-style: preserve-3d;
+
+  -moz-transition: -moz-transform 0.5s linear;
+  -moz-transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  padding: 0px;
+  border: 1px solid cornflowerblue;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  text-align: center;
+  padding-inline: 30px;
+  margin-bottom: 70px;
+
+  .icon {
+    display: block;
+    font-size: 35px;
+    color: var(--primary-color);
+    margin: 25px auto;
+  }
+
+  h3 {
+    margin-bottom: 25px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  button {
+    margin-top: 10px;
+    border-radius: 90px;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+
+    &:hover {
+      border: 1px solid #000;
+      color: black;
+      transition: all 0.25s linear;
+    }
+  }
+}
+
+.cube .front {
+  -webkit-transform: translateZ(150px);
+  -moz-transform: translateZ(150px);
+  background-color: #fff;
+}
+
+.cube .side {
+  -webkit-transform: rotateY(-90deg) translateZ(150px);
+  -moz-transform: rotateY(-90deg) translateZ(150px);
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.cube:hover {
+  -webkit-transform: rotateY(90deg);
+}
+
+.doctor {
+  margin-top: 100px;
+
+  &-logo {
+    margin-left: 100px;
+    position: relative;
+    width: 50%;
+
+    .picture {
+      width: max-content;
+      border-top-left-radius: 30%;
+      height: 500px;
+      box-shadow: 10px 10px 5px #ccc;
+    }
+    .picture-abs {
+      position: absolute;
+      width: 150px;
+      height: 200px;
+      border-radius: 15px;
+      left: -50px;
+      top: 60px;
+      box-shadow: 0px 6px 5px #ccc;
+    }
+    .picture-abs:nth-child(2) {
+      right: -0.5em !important;
+      left: unset;
+      top: 270px;
+    }
+  }
+
+  &-content {
+    background: linear-gradient(250deg, #e3ebf4, #fff);
+    padding: 20px;
+    h3 {
+      font-weight: bold;
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    &-box {
+      margin-top: 40px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0px 6px 5px #ccc;
+      padding: 20px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
+        margin-top: 10px;
+        font-size: 13px;
+      }
+
+      &:hover span {
+        color: var(--primary-color);
+        transition: 0.25s;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.whyChoose {
+  background-color: #17224d;
+  color: #fff;
+  padding-top: 70px;
+
+  &-img {
+    overflow: hidden;
+    border-top-right-radius: 45%;
+    border-bottom-right-radius: 45%;
+  }
+
+  &-content {
+    h5 {
+      color: var(--primary-color);
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      font-size: 45px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    &-box {
+      &-icon {
+        margin-right: 30px;
+        padding: 15px 20px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        font-size: 25px;
+      }
+
+      h4 {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
+
+.family {
+  padding-top: 100px;
+  background-image: linear-gradient(to right bottom, #edf1fc97, #edf1fc),
+    url("../images/background.png");
+
+  &-img {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  &-content {
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 5px #ccc;
+    background-color: #fff;
+    max-width: 600px;
+    height: max-content;
+
+    h3 {
+      font-size: 44px;
+      font-weight: bold;
+    }
+  }
+}

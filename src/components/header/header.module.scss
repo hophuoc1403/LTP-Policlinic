@@ -1,0 +1,133 @@
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  // position: relative;
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  top: 0;
+  z-index: 1000000000000000000;
+
+  .logo {
+    width: 200px;
+    height: 100px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10vw;
+
+    .menu_appear {
+      width: max-content;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .menu_res_appear {
+      display: block !important;
+      position: absolute;
+      bottom: -200px;
+      width: 100vw;
+      background-color: white;
+      left: 0;
+      flex-direction: column !important;
+      height: 200px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      animation: appear 0.5s ease;
+
+      & > span {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+
+    @keyframes appear {
+      0% {
+        height: 0%;
+      }
+      100% {
+        height: max-content !important;
+      }
+    }
+    span {
+      margin-inline: 20px;
+      font-weight: 500;
+      font-size: 20px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.25s ease;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+
+      &:hover .sub_menu {
+        transition: all 0.25s ease;
+        height: 150px;
+        background-color: white !important;
+      }
+    }
+    .sub_menu {
+      position: absolute;
+      top: 30px;
+      display: flex;
+      flex-direction: column;
+      padding-top: 10px;
+      font-weight: normal;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      height: 0%;
+      width: max-content;
+      background-color: transparent;
+      overflow: hidden;
+
+      span {
+        margin-top: 7px;
+        color: black !important;
+
+        &:hover {
+          color: var(--primary-color) !important;
+        }
+      }
+    }
+  }
+  .appointment button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 30px;
+    border: unset;
+    font-weight: bold;
+
+    &:hover {
+      background-color: blueviolet;
+      transition: all 0.25s ease;
+    }
+  }
+
+  .active_menu {
+    color: var(--primary-color) !important;
+  }
+
+  .menu-disappear {
+    display: none !important;
+    position: absolute;
+  }
+
+  .menu_response {
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: rgb(245, 233, 233);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--primary-color);
+      transition: all 0.25s ease;
+    }
+  }
+}

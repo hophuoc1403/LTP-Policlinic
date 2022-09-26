@@ -1,0 +1,34 @@
+.service {
+  background-image: linear-gradient(to right bottom, #edf1fc97, #edf1fc),
+    url("../images/background.png");
+
+  &-box {
+    background-color: #fff;
+    max-width: 90vw;
+    margin: 20px auto;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 30px 40px;
+
+    .icon {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 50%;
+      background-color: var(--secondary-color);
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      color: white;
+      background-color: var(--primary-color);
+      transform: translateY(-15px);
+      transition: all 0.125s linear;
+      cursor: pointer;
+
+      .icon {
+        color: var(--primary-color);
+      }
+    }
+  }
+}

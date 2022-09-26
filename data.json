@@ -1,0 +1,66 @@
+{
+  "article": [
+    {
+      "name": "Poison Ivy: How to Treat that Itchy Rash",
+      "sub": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur",
+      "image": "https://demo.moxcreative.com/mediscare/wp-content/uploads/sites/51/2021/07/man-at-medical-examination.jpg"
+    },
+    {
+      "name": "Artery Heart Disease is Different in Women",
+      "sub": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur",
+      "image": "https://demo.moxcreative.com/mediscare/wp-content/uploads/sites/51/2021/07/women.jpg"
+    },
+    {
+      "name": "Don’t risk being another cancer statistic",
+      "sub": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur",
+      "image": "https://demo.moxcreative.com/mediscare/wp-content/uploads/sites/51/2021/07/world-cancer-day-e1625293007595.jpg"
+    },
+    {
+      "name": "Natural medicine – a growing force in world healthcare",
+      "sub": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur",
+      "image": "https://demo.moxcreative.com/mediscare/wp-content/uploads/sites/51/2021/07/bottles-of-essential-oils-and-herbs-on-white-surface-alternative-medicine-concept.jpg"
+    },
+    {
+      "name": "What are the benefits of Bioidentical Hormone Replacement Therapy?",
+      "sub": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur",
+      "image": "https://demo.moxcreative.com/mediscare/wp-content/uploads/sites/51/2021/07/doctor-doing-medical-injection-syringe-vaccine-to-young-patient-in-hospital.jpg"
+    },
+    {
+      "name": "The case for ivermectin in the fight against Covid-19",
+      "sub": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur",
+      "image": "https://demo.moxcreative.com/mediscare/wp-content/uploads/sites/51/2021/07/medical-conference-e1625293107314.jpg"
+    }
+  ],
+  "doctor": [
+    {
+      "name": "Dr. Ho Phuoc",
+      "position": "CEO",
+      "img": "https://demo.moxcreative.com/mediscare/wp-content/uploads/sites/51/2021/07/doctor-e1625182386574.jpg"
+    },
+    {
+      "name": "Dr. Quang Lam",
+      "position": "Cardiology",
+      "img": "images/lam.png"
+    },
+    {
+      "name": "Dr. Van Tu",
+      "position": "Dermatologists",
+      "img": "images/tu.png"
+    },
+    {
+      "name": "Dr. Paul Packard",
+      "position": "Dermatologists",
+      "img": "https://demo.moxcreative.com/mediscare/wp-content/uploads/sites/51/2021/07/smiling-mature-male-doctor-with-stethoscope-holding-laptop-isolated-on-white-e1625182645470.jpg"
+    },
+    {
+      "name": "Dr. Jorge Pennebaker",
+      "position": "Cardiology",
+      "img": "https://demo.moxcreative.com/mediscare/wp-content/uploads/sites/51/2021/07/doctor-4-e1625182463251.jpg"
+    },
+    {
+      "name": "Dr. Linda Abner",
+      "position": "Dermatologists",
+      "img": "https://demo.moxcreative.com/mediscare/wp-content/uploads/sites/51/2021/07/doctor-1-e1625182426840.jpg"
+    }
+  ]
+}
