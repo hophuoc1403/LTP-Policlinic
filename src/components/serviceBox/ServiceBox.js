@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { ButtonBox } from "../";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -29,49 +30,55 @@ function ServiceBox() {
         marginTop={7}
       >
         <Box className={cx("service-box")} textAlign="center">
-          <div className={cx("icon")}>
-            <FontAwesomeIcon icon={faHeartPulse} />
-          </div>
-          <h4>Cardiology</h4>
-          <p>
-            Vel arcu tempus natoque consectetur pede phasellus magnis mattis
-            letius consequat ullamcorper
-          </p>
+          <Link className="link" to={`/service/1`}>
+            <div className={cx("icon")}>
+              <FontAwesomeIcon icon={faHeartPulse} />
+            </div>
+            <h4>Cardiology</h4>
+            <p>
+              Vel arcu tempus natoque consectetur pede phasellus magnis mattis
+              letius consequat ullamcorper
+            </p>
 
-          <span>Learn more </span>
-          <hr
-            style={{ width: "80px", display: "block", margin: "10px auto" }}
-          />
+            <span>Learn more </span>
+            <hr
+              style={{ width: "80px", display: "block", margin: "10px auto" }}
+            />
+          </Link>
         </Box>
         <Box className={cx("service-box")} textAlign="center">
-          <div className={cx("icon")}>
-            <FontAwesomeIcon icon={faTooth} />
-          </div>
-          <h4>Dental</h4>
-          <p>
-            Vel arcu tempus natoque consectetur pede phasellus magnis mattis
-            letius consequat ullamcorper
-          </p>
+          <Link className="link" to={`/service/2`}>
+            <div className={cx("icon")}>
+              <FontAwesomeIcon icon={faTooth} />
+            </div>
+            <h4>Dental</h4>
+            <p>
+              Vel arcu tempus natoque consectetur pede phasellus magnis mattis
+              letius consequat ullamcorper
+            </p>
 
-          <span>Learn more </span>
-          <hr
-            style={{ width: "80px", display: "block", margin: "10px auto" }}
-          />
+            <span>Learn more </span>
+            <hr
+              style={{ width: "80px", display: "block", margin: "10px auto" }}
+            />
+          </Link>
         </Box>
         <Box className={cx("service-box")} textAlign="center">
-          <div className={cx("icon")}>
-            <FontAwesomeIcon icon={faBrain} />
-          </div>
-          <h4>Neurology</h4>
-          <p>
-            Vel arcu tempus natoque consectetur pede phasellus magnis mattis
-            letius consequat ullamcorper
-          </p>
+          <Link className="link" to={`/service/3`}>
+            <div className={cx("icon")}>
+              <FontAwesomeIcon icon={faBrain} />
+            </div>
+            <h4>Neurology</h4>
+            <p>
+              Vel arcu tempus natoque consectetur pede phasellus magnis mattis
+              letius consequat ullamcorper
+            </p>
 
-          <span>Learn more </span>
-          <hr
-            style={{ width: "80px", display: "block", margin: "10px auto" }}
-          />
+            <span>Learn more </span>
+            <hr
+              style={{ width: "80px", display: "block", margin: "10px auto" }}
+            />
+          </Link>
         </Box>
       </Stack>
       <Stack
@@ -80,54 +87,56 @@ function ServiceBox() {
         marginTop={7}
       >
         <Box className={cx("service-box")} textAlign="center">
-          <div className={cx("icon")}>
-            <FontAwesomeIcon icon={faEye} />
-          </div>
-          <h4>Ophthalmologist</h4>
-          <p>
-            Vel arcu tempus natoque consectetur pede phasellus magnis mattis
-            letius consequat ullamcorper
-          </p>
+          <Link className="link" to={`/service/4`}>
+            <div className={cx("icon")}>
+              <FontAwesomeIcon icon={faEye} />
+            </div>
+            <h4>Ophthalmologist</h4>
+            <p>
+              Vel arcu tempus natoque consectetur pede phasellus magnis mattis
+              letius consequat ullamcorper
+            </p>
 
-          <span>Learn more </span>
-          <hr
-            style={{ width: "80px", display: "block", margin: "10px auto" }}
-          />
+            <span>Learn more </span>
+            <hr
+              style={{ width: "80px", display: "block", margin: "10px auto" }}
+            />
+          </Link>
         </Box>
         <Box className={cx("service-box")} textAlign="center">
-          <div className={cx("icon")}>
-            <FontAwesomeIcon icon={faChildren} />
-          </div>
-          <h4>Pediatrician</h4>
-          <p>
-            Vel arcu tempus natoque consectetur pede phasellus magnis mattis
-            letius consequat ullamcorper
-          </p>
+          <Link className="link" to={`/service/5`}>
+            <div className={cx("icon")}>
+              <FontAwesomeIcon icon={faChildren} />
+            </div>
+            <h4>Pediatrician</h4>
+            <p>
+              Vel arcu tempus natoque consectetur pede phasellus magnis mattis
+              letius consequat ullamcorper
+            </p>
 
-          <span>Learn more </span>
-          <hr
-            style={{ width: "80px", display: "block", margin: "10px auto" }}
-          />
+            <span>Learn more </span>
+            <hr
+              style={{ width: "80px", display: "block", margin: "10px auto" }}
+            />
+          </Link>
         </Box>
         <Box className={cx("service-box")} textAlign="center">
-          <div className={cx("icon")}>
-            <FontAwesomeIcon icon={faStethoscope} />
-          </div>
-          <h4>Primary Care</h4>
-          <p>
-            Vel arcu tempus natoque consectetur pede phasellus magnis mattis
-            letius consequat ullamcorper
-          </p>
+          <Link className="link" to={`/service/6`}>
+            <div className={cx("icon")}>
+              <FontAwesomeIcon icon={faStethoscope} />
+            </div>
+            <h4>Primary Care</h4>
+            <p>
+              Vel arcu tempus natoque consectetur pede phasellus magnis mattis
+              letius consequat ullamcorper
+            </p>
 
-          <span>Learn more </span>
-          <hr
-            style={{ width: "80px", display: "block", margin: "10px auto" }}
-          />
+            <span>Learn more </span>
+            <hr
+              style={{ width: "80px", display: "block", margin: "10px auto" }}
+            />
+          </Link>
         </Box>
-      </Stack>
-      <Stack justifyContent={"space-between"} direction={"row"}>
-        <h3>News & Article</h3>
-        <ButtonBox small content={"View All Article"} />
       </Stack>
     </Box>
   );

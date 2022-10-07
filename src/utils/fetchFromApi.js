@@ -7,3 +7,7 @@ export const fetchFromAPI = async (url) => {
 
   return data;
 };
+
+export const postToAPI = async (url, data) => {
+  await axios.post(`${BASE_URL}/${url}`, data);
+};

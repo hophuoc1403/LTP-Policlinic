@@ -6,11 +6,28 @@ import reportWebVitals from "./reportWebVitals";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min";
 import "../node_modules/bootstrap/dist/js/bootstrap.min";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
 
+import GLobalState from "./GlobalState";
+import productCart from "./redux/userReducer";
+
+const store = configureStore({
+  reducer: {
+    productCart: productCart,
+  },
+});
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <App />
+    root.render(
+    <Provider store={store}>
+      <GLobalState>
+        <App />
+      </GLobalState>
+    </Provider>
+    );
   </>
 );
 

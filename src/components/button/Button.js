@@ -1,17 +1,22 @@
 import Button from "@mui/material/Button";
+import classNames from "classnames/bind";
+import styles from "./button.module.scss";
 
-function ButtonBox({ small, big, content }) {
+const cx = classNames.bind(styles);
+function ButtonBox({ width, small = false, big = false, content }) {
   return (
     <>
       {small && (
         <Button
+            type="submit"
           variant="contained"
-          component="label"
+          component="button"
           sx={{
             borderRadius: "30px",
             bgcolor: "var(--primary-color)",
             fontSize: "12px",
             paddingBlock: "5px",
+            textAlign: "center",
           }}
         >
           {content}
@@ -20,14 +25,17 @@ function ButtonBox({ small, big, content }) {
 
       {big && (
         <Button
+            type={"submit"}
           variant="contained"
-          component="label"
+          component="button"
           sx={{
             borderRadius: "30px",
             bgcolor: "var(--primary-color)",
             fontSize: "15px",
-            paddingBlock: "10px",
+            textAlign: "center",
+            padding: "10px 20px",
           }}
+          className={cx(width ? "maxWidth" : "", "animation")}
         >
           {content}
         </Button>

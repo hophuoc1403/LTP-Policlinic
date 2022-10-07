@@ -3,9 +3,16 @@ import styles from "./header.module.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { logo } from "../";
-import { faBars, faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useRef, useState } from "react";
+import {
+  faBars,
+  faCaretDown,
+  faCartPlus,
+} from "@fortawesome/free-solid-svg-icons";
+import { useContext, useEffect, useRef, useState } from "react";
 import autoAnimate from "@formkit/auto-animate";
+import { ButtonBox } from "../";
+import { StoreContext } from "../../GlobalState";
+import { Avatar } from "@mui/material";
 
 const cx = classNames.bind(styles);
 const listMenu = [
@@ -13,6 +20,7 @@ const listMenu = [
   { name: "About us", href: "about" },
   { name: "Service", href: "/service" },
   { name: "Contact", href: "/contact" },
+  { name: "Drugs", href: "medicine" },
   { name: "Blog", href: "blog" },
 ];
 
@@ -41,6 +49,7 @@ function Header() {
   const [check, setCheck] = useState(false);
   const [openMenuResponse, setOpenMenuResponse] = useState(false);
 
+  const { currentAccount, setCurrentAccount } = useContext(StoreContext);
   const menuRef = useRef();
 
   const parent = useRef(null);
@@ -69,12 +78,19 @@ function Header() {
   return (
     <div className={cx("header")}>
       <div className={cx("logo")}>
-        <img className="card-img-h" src={logo} alt="" />
+        <Link to={"/"}>
+          <img
+            onClick={() => getActiveMenu(0)}
+            className="card-img-h"
+            src={logo}
+            alt=""
+          />
+        </Link>
       </div>
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
           alignItems: "center",
         }}
       >
@@ -98,71 +114,119 @@ function Header() {
             {listMenu.map((item, index) => {
               if (index === listMenu.length - 1) {
                 return (
-                  <span
-                    ref={parent}
-                    style={{ display: "flex", alignItems: "center" }}
-                    key={index}
-                    onClick={() => getActiveMenu(index)}
-                    className={cx({ active_menu: activeMenu === index })}
-                  >
-                    {item.name}{" "}
-                    <FontAwesomeIcon
-                      style={{ marginLeft: "5px" }}
-                      icon={faCaretDown}
-                    />
-                    <div className={cx("sub_menu")}>
-                      <span
-                        onClick={() => {
-                          setOpenMenuResponse(false);
-                        }}
-                      >
-                        <Link to={"/faq"} className="link">
-                          FAQ
-                        </Link>
-                      </span>
-                      <span
-                        onClick={() => {
-                          setOpenMenuResponse(false);
-                        }}
-                      >
-                        <Link to={"/feedback"} className="link">
-                          Feedback
-                        </Link>
-                      </span>
-                      <span
-                        onClick={() => {
-                          setOpenMenuResponse(false);
-                        }}
-                      >
-                        <Link to="/tips" className="link">
-                          Healthy Tips
-                        </Link>
-                      </span>
-                    </div>
-                  </span>
+                  // last menu list
+                  <div style={{ display: "flex" }}>
+                    <span
+                      ref={parent}
+                      style={{ display: "flex", alignItems: "center" }}
+                      key={index}
+                      onClick={() => getActiveMenu(index)}
+                      className={cx({ active_menu: activeMenu === index })}
+                    >
+                      {item.name}{" "}
+                      <FontAwesomeIcon
+                        style={{ marginLeft: "5px" }}
+                        icon={faCaretDown}
+                      />
+                      <div className={cx("sub_menu")}>
+                        <div>
+                          <span
+                            onClick={() => {
+                              setOpenMenuResponse(false);
+                            }}
+                          >
+                            <Link to={"/faq"} className="link">
+                              FAQ
+                            </Link>
+                          </span>
+                        </div>
+                        <span
+                          onClick={() => {
+                            setOpenMenuResponse(false);
+                          }}
+                        >
+                          <Link to={"/feedback"} className="link">
+                            Feedback
+                          </Link>
+                        </span>
+                        <span
+                          onClick={() => {
+                            setOpenMenuResponse(false);
+                          }}
+                        >
+                          <Link to="/blog" className="link">
+                            Blog
+                          </Link>
+                        </span>
+                      </div>
+                    </span>
+                  </div>
                 );
               } else {
                 return (
-                  <span
-                    key={index}
-                    onClick={() => {
-                      getActiveMenu(index);
-                      setOpenMenuResponse(false);
-                    }}
-                    className={cx({ active_menu: activeMenu === index })}
+                  <div
+                    style={{ position: "relative" }}
+                    className={cx("div_span")}
                   >
-                    <Link to={`${item.href}`} className="link">
-                      {item.name}
-                    </Link>
-                  </span>
+                    <span
+                      key={index}
+                      onClick={() => {
+                        getActiveMenu(index);
+                        setOpenMenuResponse(false);
+                      }}
+                      className={cx({ active_menu: activeMenu === index })}
+                    >
+                      <Link to={`${item.href}`} className="link">
+                        {item.name}
+                      </Link>
+                    </span>
+                    <div className={cx("line_under_header")}></div>
+                  </div>
                 );
               }
             })}
           </div>
         </div>
-        <div className={cx("appointment")}>
-          <button>Book Appointment</button>
-        </div>
+        {currentAccount.state === false ? (
+          <Link to={"/login"} className="link">
+            {" "}
+            <ButtonBox big content={"Sign In"} />
+          </Link>
+        ) : (
+          <div className={cx("user", "d-flex")}>
+            <div className={cx("user-logo")}>
+              <Avatar
+                alt=""
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7yjqw5tzypfIAlOvMgrt8047s9uiuxqX9yw&usqp=CAU"
+              />
+              <span>{currentAccount.account.name}</span>
+              <Link to={"/cart"} className="link">
+                <span style={{ marginLeft: "10px" }}>
+                  <FontAwesomeIcon icon={faCartPlus} />
+                </span>
+              </Link>
+            </div>
+            <ul className={cx("user-dropdown")}>
+              <Link to={"/appointment"} className={"link"}>
+                <li>Make appointment</li>
+              </Link>
+              <li>
+                <Link className="link" to={"/patient"}>
+                  Profile
+                </Link>
+              </li>
+              <Link className={"link"} to={"/"}>
+                <li
+                  onClick={() =>
+                    setCurrentAccount({ account: "", state: false })
+                  }
+                >
+                  Log out
+                </li>
+              </Link>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

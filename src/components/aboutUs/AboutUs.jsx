@@ -17,6 +17,7 @@ import {
   faLinkedinIn,
   faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -182,6 +183,7 @@ function AboutUs() {
         </Stack>
       </Container>
 
+      {/* messages from founder */}
       <Stack
         direction={{ md: "row", sm: "column" }}
         className={cx("founder")}
@@ -214,6 +216,7 @@ function AboutUs() {
         </Box>
       </Stack>
 
+      {/* doctor list */}
       <Box textAlign={"center"}>
         <p
           style={{
@@ -240,15 +243,17 @@ function AboutUs() {
           <div className="row">
             {doctors.map((doctor) => {
               return (
-                <div className="col-lg-4 col-md-6">
+                <div key={doctor.id} className="col-lg-4 col-md-6">
                   <div className={cx("card", "card-custom")}>
-                    <div className={cx("card-custom-img")}>
-                      <img
-                        className={cx("card-img-top", "card-img-h")}
-                        src={doctor.img}
-                        alt="Card  cap"
-                      />
-                    </div>
+                    <Link to={`/doctor/${doctor.id}`}>
+                      <div className={cx("card-custom-img")}>
+                        <img
+                          className={cx("card-img-top", "card-img-h")}
+                          src={doctor.img}
+                          alt="Card  cap"
+                        />
+                      </div>
+                    </Link>
                     <div className="card-body">
                       <h5 className="card-title">{doctor.name}</h5>
                       <p className="card-text">{doctor.position}</p>

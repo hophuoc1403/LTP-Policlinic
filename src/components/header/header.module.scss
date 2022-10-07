@@ -11,16 +11,17 @@
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   top: 0;
   z-index: 1000000000000000000;
+  max-height: 100px;
 
   .logo {
-    width: 200px;
-    height: 100px;
+    width: 150px;
+    height: 70px;
   }
 
   .menu {
     display: flex;
-    justify-content: space-between;
-    margin-right: 10vw;
+    justify-content: space-around;
+    margin-right: 1vw;
 
     .menu_appear {
       width: max-content;
@@ -54,10 +55,24 @@
         height: max-content !important;
       }
     }
+
+    .line_under_header {
+      position: absolute;
+      top: calc(100% + 7px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(to right bottom, green, blue);
+    }
+    .div_span {
+      margin-block: 10px;
+    }
+
     span {
       margin-inline: 20px;
       font-weight: 500;
-      font-size: 20px;
+      font-size: 17px;
       position: relative;
       cursor: pointer;
       transition: all 0.25s ease;
@@ -68,8 +83,14 @@
 
       &:hover .sub_menu {
         transition: all 0.25s ease;
-        height: 150px;
+        height: max-content;
         background-color: white !important;
+        opacity: 1;
+      }
+
+      &:hover + .line_under_header {
+        width: 99%;
+        transition: all 0.25s linear;
       }
     }
     .sub_menu {
@@ -77,13 +98,15 @@
       top: 30px;
       display: flex;
       flex-direction: column;
-      padding-top: 10px;
+      padding-block: 10px;
       font-weight: normal;
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       height: 0%;
+      opacity: 0;
       width: max-content;
       background-color: transparent;
       overflow: hidden;
+      border-radius: inherit;
 
       span {
         margin-top: 7px;
@@ -128,6 +151,50 @@
     &:hover {
       background-color: var(--primary-color);
       transition: all 0.25s ease;
+    }
+  }
+
+  .user {
+    position: relative;
+    margin-right: 5em;
+
+    &-logo {
+      padding: 10px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    &-dropdown {
+      text-align: center;
+      width: max-content;
+      position: absolute;
+      top: 100%;
+      left: -5px;
+      padding-inline: 10px;
+      list-style-type: none;
+      background-color: #fff;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: all 0.25s;
+      border-radius: 10px;
+
+      li {
+        display: block;
+        padding: 5px !important;
+        margin-left: -0px !important;
+        transition: all 0.25s;
+        &:hover {
+          background-color: burlywood;
+          border-radius: 10px;
+        }
+      }
+    }
+
+    &:hover .user-dropdown {
+      opacity: 1;
     }
   }
 }

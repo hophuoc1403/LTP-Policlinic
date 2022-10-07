@@ -23,6 +23,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: monospace;
 }
 
 code {
@@ -45,4 +46,8 @@ code {
 .link {
   color: unset;
   text-decoration: unset;
+}
+
+.link:hover {
+  color: unset;
 }

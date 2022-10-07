@@ -1,0 +1,11 @@
+.appoint{
+
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to right,#92b9e3, #fba2d0);
+  padding-block: 50px;
+
+  &-box{
+    width: 60% !important;
+  }
+}

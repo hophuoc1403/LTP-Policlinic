@@ -13,6 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import useIsInViewport from "../../customeHooks/isInViewPort";
 import { useRef } from "react";
+import "aos/dist/aos.css";
 
 import {
   Banner,
@@ -73,6 +74,10 @@ function Home() {
       <Banner />
 
       <Stack
+        data-aos="fade-zoom-in"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
         gap={5}
         className={cx("about")}
         ref={aboutUsRef}
@@ -141,6 +146,10 @@ function Home() {
       </Box>
 
       <Stack
+        data-aos="fade-zoom-in"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
         sx={{
           marginInline: "50px",
           marginTop: "-200px",
@@ -228,6 +237,10 @@ function Home() {
 
       {/* demo doctor */}
       <Stack
+        data-aos="fade-zoom-in"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
         direction={{ sm: "column", md: "column", lg: "row" }}
         className={cx("doctor")}
       >
@@ -415,6 +428,13 @@ function Home() {
           <ArticleBox amount={3} />
         </Stack>
       </div>
+      <div
+        className=""
+        data-aos="fade-zoom-in"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
+      ></div>
     </div>
   );
 }

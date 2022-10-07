@@ -13,18 +13,22 @@ import autoAnimate from "@formkit/auto-animate";
 import { banner1, banner2, banner3 } from "../";
 
 const cx = classNames.bind(styles);
-const listImgBanner = [banner1, banner2, banner3];
+const listImgBanner = [
+  "images/banner1.png",
+  "images/banner2.png",
+  "images/banner3.png",
+];
 
 function Banner() {
   const [currentImg, setCurrentImg] = useState(banner1);
 
   useEffect(() => {
     let intervalImg = setInterval(() => {
-      let i = Math.floor(Math.random() * 2);
+      let i = Math.floor(Math.random() * 3);
       setCurrentImg(listImgBanner[i]);
     }, 4000);
 
-    // return () => clearInterval(intervalImg);
+    return () => clearInterval(intervalImg);
   }, []);
 
   return (

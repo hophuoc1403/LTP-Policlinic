@@ -1,0 +1,139 @@
+.faq {
+  .banner {
+    padding-block: 60px;
+    background-image: linear-gradient(
+        150deg,
+        #5ba2f483,
+        rgba(255, 255, 255, 0.591)
+      ),
+      url("../images/background.png");
+
+    background-size: fill;
+
+    h1 {
+      padding: 0 0 30px 50px;
+    }
+    p {
+      padding-left: 50px;
+      padding-bottom: 20px;
+      width: 70vw;
+    }
+  }
+
+  &-fline {
+    margin-block: 70px;
+
+    h5 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 10px;
+      border-radius: 30px;
+      color: #edf1fc;
+      border: none;
+      background-color: var(--primary-color);
+    }
+
+    .emergency {
+      text-align: center !important;
+      background-image: linear-gradient(to right bottom, #19025ec2, #020c34cf),
+        url("https://demo.moxcreative.com/mediscare/wp-content/uploads/sites/51/2021/07/memphis_small_1.png");
+      background-position: center;
+      background-size: contain;
+      color: #fff;
+      padding: 30px 20px;
+      border-radius: 20px;
+      min-height: 270px;
+
+      i {
+        font-size: 25px;
+        color: #3393f0;
+      }
+
+      p {
+        margin-bottom: 3px;
+        margin-left: 10px;
+
+        &:first-child {
+          font-weight: bold;
+        }
+      }
+
+      .line-break {
+        width: 100px;
+        height: 3px;
+        background-color: blue;
+        margin: 20px auto;
+      }
+
+      strong {
+        font-size: 25px;
+      }
+    }
+
+    .office {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      padding: 20px;
+      border-radius: 15px;
+      .icon {
+        padding: 10px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        color: var(--primary-color);
+      }
+
+      h6 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      p {
+        margin-left: 10px;
+        font-weight: bold;
+        font-size: 17px;
+
+        span {
+          font-weight: 400;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .faq_boxes {
+    background-image: linear-gradient(
+        150deg,
+        #5ba2f483,
+        rgba(255, 255, 255, 0.591)
+      ),
+      url("../images/background.png");
+    padding: 50px 20px;
+    text-align: center;
+
+    h6 {
+      color: var(--primary-color);
+    }
+
+    & > p {
+      max-width: 50%;
+      margin: 20px auto;
+    }
+
+    .faq_box {
+      margin-block: 15px;
+      border-radius: 20px;
+      background-color: var(--secondary-color);
+
+      .title {
+        font-weight: bold;
+        margin-block: 10px;
+      }
+    }
+  }
+}
