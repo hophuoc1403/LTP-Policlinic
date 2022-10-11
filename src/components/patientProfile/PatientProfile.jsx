@@ -1,19 +1,18 @@
 import classNames from "classnames/bind";
-import {useContext, useEffect, useState} from "react";
+import { useContext, useEffect, useState } from "react";
 import { StoreContext } from "../../GlobalState";
 import styles from "./Patien.module.scss";
-import {fetchFromAPI} from "../../utils/fetchFromApi";
-
+import { fetchFromAPI } from "../../utils/fetchFromApi";
 
 const cx = classNames.bind(styles);
 
 function PatientProfile() {
-  const { currentAccount,infoAppoint } = useContext(StoreContext);
-  const [medicine,setMedicine] = useState([])
+  const { currentAccount, infoAppoint } = useContext(StoreContext);
+  const [medicine, setMedicine] = useState([]);
 
-  useEffect(()=>{
-    fetchFromAPI("medicine").then(data => setMedicine(data))
-  },[])
+  useEffect(() => {
+    fetchFromAPI("medicine").then((data) => setMedicine(data));
+  }, []);
 
   return (
     <div className="">
@@ -149,7 +148,6 @@ function PatientProfile() {
                     </h6>
                     <span class="text-secondary">2 years</span>
                   </li>
-
                 </ul>
               </div>
             </div>
@@ -197,7 +195,7 @@ function PatientProfile() {
                     </div>
                   </div>
                   <hr />
-                  <div class="row">
+                  {/* <div class="row">
                     <div class="col-sm-12">
                       <a
                         class="btn btn-info "
@@ -207,78 +205,92 @@ function PatientProfile() {
                         Edit
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
               <div class="row gutters-sm">
-
-
-                {infoAppoint && infoAppoint.map((item,index) => {
-                  return (
+                {infoAppoint.length > 0 ? (
+                  infoAppoint.map((item, index) => {
+                    return (
                       <div className="col-sm-6 mb-3">
                         <div className="card h-100">
                           <div className="card-body">
                             <h6 className="d-flex align-items-center mb-3">
-                              <i className="material-icons text-info mr-2">History</i>
+                              <i className="material-icons text-info mr-2">
+                                History
+                              </i>
                               Appointment
                             </h6>
                             <small>name : {item.name}</small>
-                            <div className="progress mb-3" style={{height: "5px"}}>
+                            <div
+                              className="progress mb-3"
+                              style={{ height: "5px" }}
+                            >
                               <div
-                                  className="progress-bar bg-primary"
-                                  role="progressbar"
-                                  aria-valuenow="80"
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
+                                className="progress-bar bg-primary"
+                                role="progressbar"
+                                aria-valuenow="80"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
                               ></div>
                             </div>
-                            <small>email :  <strong>{item.email}</strong></small>
-                            <div className="progress mb-3" style={{height: "5px"}}>
+                            <small>
+                              email : <strong>{item.email}</strong>
+                            </small>
+                            <div
+                              className="progress mb-3"
+                              style={{ height: "5px" }}
+                            >
                               <div
-                                  className="progress-bar bg-primary"
-                                  role="progressbar"
-                                  aria-valuenow="72"
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
+                                className="progress-bar bg-primary"
+                                role="progressbar"
+                                aria-valuenow="72"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
                               ></div>
                             </div>
-                            <small>date : <strong>{item.date}</strong></small>
-                            <div className="progress mb-3" style={{height: "5px"}}>
+                            <small>
+                              date : <strong>{item.date}</strong>
+                            </small>
+                            <div
+                              className="progress mb-3"
+                              style={{ height: "5px" }}
+                            >
                               <div
-                                  className="progress-bar bg-primary"
-                                  role="progressbar"
-                                  aria-valuenow="89"
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
+                                className="progress-bar bg-primary"
+                                role="progressbar"
+                                aria-valuenow="89"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
                               ></div>
                             </div>
-                            <small>subject : <srong>{item.subject}</srong></small>
-                            <div className="progress mb-3" style={{height: "5px"}}>
+                            <small>
+                              subject : <srong>{item.subject}</srong>
+                            </small>
+                            <div
+                              className="progress mb-3"
+                              style={{ height: "5px" }}
+                            >
                               <div
-                                  className="progress-bar bg-primary"
-                                  role="progressbar"
-                                  aria-valuenow="55"
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
+                                className="progress-bar bg-primary"
+                                role="progressbar"
+                                aria-valuenow="55"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
                               ></div>
                             </div>
                           </div>
                         </div>
                       </div>
-                  )
-                })}
+                    );
+                  })
+                ) : (
+                  <h2>No appointment history</h2>
+                )}
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className={"container"}>
-        <h3>Medicine recommended depend on your health</h3>
-
-        <div className={"row"}>
-          <div>{}</div>
         </div>
       </div>
     </div>

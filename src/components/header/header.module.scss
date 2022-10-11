@@ -95,7 +95,7 @@
     }
     .sub_menu {
       position: absolute;
-      top: 30px;
+      top: 37px;
       display: flex;
       flex-direction: column;
       padding-block: 10px;
@@ -155,10 +155,11 @@
   }
 
   .user {
-    position: relative;
     margin-right: 5em;
+    align-items: center;
 
     &-logo {
+      position: relative;
       padding: 10px;
       border-radius: 50%;
       display: flex;
@@ -180,6 +181,7 @@
       opacity: 0;
       transition: all 0.25s;
       border-radius: 10px;
+      z-index: -1;
 
       li {
         display: block;
@@ -193,8 +195,17 @@
       }
     }
 
+    .cart {
+      padding: 10px 13px;
+      align-items: center;
+      border-radius: 50%;
+      background-color: rgb(214, 209, 209);
+      color: blueviolet;
+    }
+
     &:hover .user-dropdown {
       opacity: 1;
+      z-index: -1;
     }
   }
 }

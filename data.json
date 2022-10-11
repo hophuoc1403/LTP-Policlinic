@@ -162,5 +162,72 @@
       "id": 3
     }
   ],
-  "cart": []
+  "Question": [
+    {
+      "id": 1,
+      "Ques": "I’m suffering from sick. Can you give me something for it?"
+    },
+    {
+      "id": 2,
+      "Ques": "Can I buy this without a prescription? "
+    },
+    {
+      "id": 3,
+      "Ques": "Can you recommend anything for eyes?"
+    },
+    {
+      "id": 4,
+      "Ques": "When do I take this medicine?"
+    },
+    {
+      "id": 5,
+      "Ques": "Does it have any side – effects?"
+    },
+    {
+      "id": 6,
+      "Ques": "Can this medicine be used for all ages?"
+    },
+    {
+      "id": 7,
+      "Ques": "Can you prepare this prescription?"
+    },
+    {
+      "id": 8,
+      "Ques": "How many tablets do I have to take each time?"
+    }
+  ],
+  "Ans": [
+    {
+      "id": 1,
+      "Ans": "What are your symptoms?"
+    },
+    {
+      "id": 2,
+      "Ans": "It’s only available on prescription."
+    },
+    {
+      "id": 3,
+      "Ans": "You could try this drugs."
+    },
+    {
+      "id": 4,
+      "Ans": "One tablet each time, three times daily"
+    },
+    {
+      "id": 5,
+      "Ans": "This medicine can make you feel drowsy."
+    },
+    {
+      "id": 6,
+      "Ans": "The instructions on it tell you how to take it. Make sure you read them carefully."
+    },
+    {
+      "id": 7,
+      "Ans": "I need to have your prescription."
+    },
+    {
+      "id": 8,
+      "Ans": "Mỗi lần uống 1 viên, chia 3 lần trong ngày."
+    }
+  ]
 }

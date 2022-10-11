@@ -14,10 +14,23 @@ import {
 import styles from "./faq.module.scss";
 import classNames from "classnames/bind";
 import { Stack, width } from "@mui/system";
+import { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
 
 const cx = classNames.bind(styles);
 
 function FAQ() {
+  const [answer, setAnswer] = useState([]);
+  const [ques, setQues] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/Question")
+      .then((res) => setQues(res.data));
+    axios.get("http://localhost:8000/Ans").then((res) => setAnswer(res.data));
+  }, []);
+
   return (
     <div className={cx("faq")}>
       <div className={cx("banner")}>
@@ -96,136 +109,48 @@ function FAQ() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-12">
-              <Accordion className={cx("faq_box")}>
-                <AccordionSummary
-                  expandIcon={<FontAwesomeIcon icon={faArrowDown} />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className={cx("title")}>Accordion 1</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion className={cx("faq_box")}>
-                <AccordionSummary
-                  expandIcon={<FontAwesomeIcon icon={faArrowDown} />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className={cx("title")}>Accordion 1</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion className={cx("faq_box")}>
-                <AccordionSummary
-                  expandIcon={<FontAwesomeIcon icon={faArrowDown} />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className={cx("title")}>Accordion 1</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion className={cx("faq_box")}>
-                <AccordionSummary
-                  expandIcon={<FontAwesomeIcon icon={faArrowDown} />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className={cx("title")}>Accordion 1</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
+              {ques.map((item, index) => {
+                if (item.id <= 4) {
+                  return (
+                    <Accordion className={cx("faq_box")} key={item.id}>
+                      <AccordionSummary
+                        expandIcon={<FontAwesomeIcon icon={faArrowDown} />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                      >
+                        <Typography className={cx("title")}>
+                          {item.Ques}
+                        </Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <Typography>{answer[index].Ans}</Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  );
+                } else return "";
+              })}
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12">
-              <Accordion className={cx("faq_box")}>
-                <AccordionSummary
-                  expandIcon={<FontAwesomeIcon icon={faArrowDown} />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className={cx("title")}>Accordion 1</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion className={cx("faq_box")}>
-                <AccordionSummary
-                  expandIcon={<FontAwesomeIcon icon={faArrowDown} />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className={cx("title")}>Accordion 1</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion className={cx("faq_box")}>
-                <AccordionSummary
-                  expandIcon={<FontAwesomeIcon icon={faArrowDown} />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className={cx("title")}>Accordion 1</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion className={cx("faq_box")}>
-                <AccordionSummary
-                  expandIcon={<FontAwesomeIcon icon={faArrowDown} />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className={cx("title")}>Accordion 1</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
+              {ques.map((item, index) => {
+                if (item.id > 4) {
+                  return (
+                    <Accordion className={cx("faq_box")} key={item.id}>
+                      <AccordionSummary
+                        expandIcon={<FontAwesomeIcon icon={faArrowDown} />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                      >
+                        <Typography className={cx("title")}>
+                          {item.Ques}
+                        </Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <Typography>{answer[index].Ans}</Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  );
+                } else return "";
+              })}
             </div>
           </div>
         </div>

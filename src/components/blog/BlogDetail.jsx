@@ -37,7 +37,7 @@ function BlogDetail() {
       </div>
 
       <div className={cx("container")}>
-        <div className="d-flex justify-content-between align-items-start">
+        <div className="d-flex justify-content-around align-items-start flex-wrap">
           <div className={cx("content")}>
             <span className={cx("date")}>{date.toString()}</span>
             <h1>{article.name}</h1>

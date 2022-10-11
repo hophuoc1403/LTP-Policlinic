@@ -21,7 +21,7 @@ const listMenu = [
   { name: "Service", href: "/service" },
   { name: "Contact", href: "/contact" },
   { name: "Drugs", href: "medicine" },
-  { name: "Blog", href: "blog" },
+  { name: "More", href: "" },
 ];
 
 function useOutsideAlerter(ref, hide) {
@@ -199,32 +199,33 @@ function Header() {
                 alt=""
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7yjqw5tzypfIAlOvMgrt8047s9uiuxqX9yw&usqp=CAU"
               />
+
               <span>{currentAccount.account.name}</span>
-              <Link to={"/cart"} className="link">
-                <span style={{ marginLeft: "10px" }}>
-                  <FontAwesomeIcon icon={faCartPlus} />
-                </span>
-              </Link>
-            </div>
-            <ul className={cx("user-dropdown")}>
-              <Link to={"/appointment"} className={"link"}>
-                <li>Make appointment</li>
-              </Link>
-              <li>
-                <Link className="link" to={"/patient"}>
-                  Profile
-                </Link>
-              </li>
-              <Link className={"link"} to={"/"}>
-                <li
-                  onClick={() =>
-                    setCurrentAccount({ account: "", state: false })
-                  }
-                >
-                  Log out
+              <ul className={cx("user-dropdown")}>
+                <li>
+                  <Link className="link" to={"/patient"}>
+                    Profile
+                  </Link>
                 </li>
-              </Link>
-            </ul>
+                <Link to={"/appointment"} className={"link"}>
+                  <li>Make appointment</li>
+                </Link>
+                <Link className={"link"} to={"/"}>
+                  <li
+                    onClick={() =>
+                      setCurrentAccount({ account: "", state: false })
+                    }
+                  >
+                    Log out
+                  </li>
+                </Link>
+              </ul>
+            </div>
+            <Link to={"/cart"} className="link">
+              <span className={cx("cart")}>
+                <FontAwesomeIcon icon={faCartPlus} />
+              </span>
+            </Link>
           </div>
         )}
       </div>

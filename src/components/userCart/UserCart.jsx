@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { StoreContext } from "../../GlobalState";
 import styles from "./UserCart.module.scss";
 import classNames from "classnames/bind";
@@ -14,8 +14,8 @@ function UserCart() {
   const [products, setProducts] = useState([]);
   const dataRedux = useSelector((state) => state.productCart);
   const dispatch = useDispatch();
-
-  // console.log(dataRedux);
+  const [amount, setAmount] = useState({});
+  const [total, setTotal] = useState(0);
 
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -23,7 +23,22 @@ function UserCart() {
 
   const removeProduct = (productIndex) => {
     dispatch(removeCart({ productIndex, userId: currentAccount.account.id }));
-    // console.log(dataRedux);
+  };
+
+  const getTotal = (products, currentAmount) => {
+    let total_check = 0;
+    for (let key in products) {
+      if (currentAmount) {
+        total_check += currentAccount * products[key].price;
+        continue;
+      }
+      if (amount[key]) {
+        total_check += +amount[key] * +products[key].price;
+      } else {
+        total_check += +products[key].price;
+      }
+    }
+    setTotal(total_check);
   };
 
   useEffect(() => {
@@ -31,7 +46,13 @@ function UserCart() {
       localStorage.getItem(`cart${currentAccount.account.id}`) || "[]"
     );
     setProducts(data);
-  }, [currentAccount.account.id, dataRedux]);
+    getTotal(data);
+  }, [currentAccount.account.id, dataRedux, amount]);
+
+  const getAmount = (e, currentAmount) => {
+    setAmount((prev) => ({ ...prev, [e.target.name]: +e.target.value }));
+    getTotal(products);
+  };
 
   // console.log(products);
   return (
@@ -65,7 +86,7 @@ function UserCart() {
                           <div className={cx("infoWrap")}>
                             <div className={cx("cartSection")}>
                               <img
-                                src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg"
+                                src={product.images}
                                 alt=""
                                 className={cx("itemImg")}
                               />
@@ -77,18 +98,29 @@ function UserCart() {
                               <p>
                                 {" "}
                                 <input
-                                  type="text"
+                                  type="tex"
+                                  name={index}
                                   className={cx("qty")}
                                   placeholder="1"
+                                  width={"200px !important"}
+                                  defaultValue={1}
+                                  onChange={(e) => getAmount(e)}
                                 />{" "}
-                                x ${product.price}
+                                x ${numberWithCommas(product.price)}
                               </p>
 
                               <p className={cx("stockStatus")}> In Stock</p>
                             </div>
 
                             <div className={("prodTotal", "cartSection")}>
-                              <p>$15.00</p>
+                              <p>
+                                $
+                                {amount[index]
+                                  ? numberWithCommas(
+                                      +product.price * +amount[index]
+                                    )
+                                  : numberWithCommas(product.price)}
+                              </p>
                             </div>
                             <div className={cx("cartSection", "removeWrap")}>
                               <strong
@@ -134,12 +166,14 @@ function UserCart() {
                   <span className={cx("label")}>Tax</span>
                   <span className={cx("value")}>$4.00</span>
                 </li>
-                <li className="totalRow final">
+                <li className={cx("totalRow", "final")}>
                   <span className={cx("label")}>Total</span>
-                  <span className={cx("value")}>$44.00</span>
+                  <span className={cx("value")}>
+                    ${numberWithCommas(total)}
+                  </span>
                 </li>
                 <li className={cx("totalRow")}>
-                  <a href="#3" className="btn continue">
+                  <a href="#3" className={cx("btn", "continue")}>
                     Checkout
                   </a>
                 </li>

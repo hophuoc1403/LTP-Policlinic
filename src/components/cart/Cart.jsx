@@ -16,17 +16,31 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/userReducer";
 import { useContext } from "react";
 import { StoreContext } from "../../GlobalState";
+import { toast } from "react-toastify";
+import Sweetpagination from "sweetpagination";
 
 const cx = classNames.bind(styles);
 
 function Cart() {
   const [medicine, setMedicine] = useState([]);
+  const [currentPageData, setCurrentPageData] = useState(medicine);
+  const notify = () =>
+    toast.success("🦄 go to your cart and check now!", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   const dispatch = useDispatch();
   const { currentAccount } = useContext(StoreContext);
 
   const addProductCart = (item) => {
     dispatch(addToCart({ product: item, userId: currentAccount.account.id }));
+    notify();
   };
 
   function numberWithCommas(x) {
@@ -53,7 +67,7 @@ function Cart() {
         </h1>
 
         <div className="row pt-5">
-          {medicine.map((item) => (
+          {currentPageData.map((item) => (
             <div className="col-lg-4 col-md-6 col-sm-12">
               <Card className={cx("cart")} sx={{ maxWidth: 345 }}>
                 <CardMedia
@@ -94,6 +108,12 @@ function Cart() {
           ))}
         </div>
       </div>
+      <Sweetpagination
+        currentPageData={setCurrentPageData}
+        getData={medicine}
+        dataPerPage={6}
+        navigation={true}
+      />
     </>
   );
 }
