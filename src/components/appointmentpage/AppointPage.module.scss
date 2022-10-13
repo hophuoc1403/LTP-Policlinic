@@ -1,0 +1,18 @@
+.appoint{
+flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right,#92b9e3, #fba2d0);
+  padding-block: 40px 80px;
+
+  &-box{
+    width: 60% !important;
+  }
+
+  h1{
+    font-weight: bold;
+    text-align: center;
+    margin-block: 50px;
+  }
+}

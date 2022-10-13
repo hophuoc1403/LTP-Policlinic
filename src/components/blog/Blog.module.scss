@@ -1,0 +1,132 @@
+.blog-detail {
+  .banner {
+    background-image: linear-gradient(
+        150deg,
+        #5ba2f483,
+        rgba(255, 255, 255, 0.591)
+      ),
+      url("https://thumbs.dreamstime.com/b/doctor-open-hands-your-text-banner-design-male-hospital-opening-hand-palm-to-build-copy-space-medical-healthcare-202331594.jpg");
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    font-weight: bold;
+
+    p {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.555);
+      color: #fff;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      border-radius: 20px;
+      border-bottom-right-radius: unset;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+  }
+
+  .content {
+    width: 70%;
+    margin-top: 4em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+    .date {
+      display: block;
+      color: gray;
+      text-align: center;
+      margin-block: 20px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .img {
+      border-radius: 15px;
+
+      position: relative;
+      margin-bottom: 50px;
+    }
+    .author_img {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      padding: 10px;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    }
+    p {
+      padding: 5px 25px;
+    }
+
+    .share {
+      padding-left: 25px;
+      display: flex;
+      margin-bottom: 50px;
+
+      .icon {
+        padding-inline: 10px;
+        font-size: 20px;
+
+        &:hover {
+          transition: all 0.25s ease;
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .doctor-info {
+    width: 25%;
+    margin-top: 4em;
+    .card-custom {
+      max-width: 300px;
+      max-height: 600px;
+      border: none;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      overflow: hidden;
+      border-radius: 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s linear;
+      margin-bottom: 50px;
+
+      &-img {
+        height: 280px;
+        overflow: hidden;
+      }
+
+      i {
+        font-size: 23px;
+
+        &:hover {
+          color: var(--primary-color);
+          transition: all 0.25s linear;
+        }
+      }
+
+      &:hover img {
+        transform: scale(1.2);
+        transition: all 0.25s linear;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    width: 100% !important;
+    display: block;
+  }
+  .doctor-info {
+    width: 100% !important;
+  }
+}

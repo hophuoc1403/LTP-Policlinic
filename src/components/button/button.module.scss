@@ -1,0 +1,21 @@
+.maxWidth {
+  width: 100%;
+}
+
+.animation {
+  &:hover {
+    animation: animate 0.125s linear;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translate(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}

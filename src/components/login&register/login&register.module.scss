@@ -1,0 +1,138 @@
+.form {
+  color: #fff;
+
+  h2 {
+    text-align: center;
+    font-size: 30px;
+
+    margin-bottom: 50px;
+  }
+
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.395),
+      rgba(0, 0, 0, 0.336)
+    ),
+    url("../../../public/images/login.png");
+
+  padding-block: 50px;
+
+  &_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    //width: 80%;
+
+    &_left {
+      width: 50% !important;
+      background-image: url("../../../public/images/login.png");
+      color: #fff;
+      text-align: center;
+
+      h3 {
+        font-size: 40px;
+        font-weight: normal;
+        text-align: Center;
+        padding: 200px 0 15px;
+        text-transform: uppercase;
+        font-family: "Monoton", cursive;
+      }
+    }
+
+    &_right {
+      width: 50% !important;
+      flex: 1 0;
+      background-color: #202123;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px 2em;
+
+      input {
+        width: 100%;
+        min-width: 150px;
+        margin-block: 1em;
+        height: 50px;
+        padding: 0.8em;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        caret-color: rgb(0, 200, 0);
+        color: var(--primary-color);
+      }
+      .input_div {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 3px;
+          background-color: green;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 3px;
+          background-color: blue;
+        }
+
+        &:hover::after {
+          width: 100%;
+          transition: all 0.25s ease;
+        }
+
+        .error_mes {
+          position: absolute;
+          bottom: -20px;
+          left: 10px;
+          color: red;
+        }
+      }
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .form_rear {
+      text-align: center;
+
+      .icon {
+        margin-inline: 10px;
+        padding: 10px;
+
+        &:hover {
+          background-color: var(--primary-color);
+          animation: rotateIcon 2s infinite linear;
+        }
+
+        @keyframes rotateIcon {
+          0% {
+            transform: rotate(0);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+    button {
+      width: 100%;
+      margin-block: 20px;
+      padding-block: 10px;
+      border-radius: 15px;
+      font-weight: bold;
+      background-color: var(--primary-color);
+    }
+  }
+}
