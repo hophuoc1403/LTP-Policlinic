@@ -205,8 +205,10 @@ function Header() {
                 </Link>
                 <Link className={"link"} to={"/"}>
                   <li
-                    onClick={() =>
-                      setCurrentAccount({ account: "", state: false })
+                    onClick={() => {
+                      localStorage.removeItem("user");
+                      setCurrentAccount({account: "", state: false})
+                    }
                     }
                   >
                     Log out

@@ -21,9 +21,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import {useContext, useEffect, useState} from "react";
 import { StoreContext } from "./GlobalState";
 import Checkout from "./checkout/checkout";
+import {Login, Register} from "./components";
 
 function App() {
   const { setCurrentAccount } = useContext(StoreContext);
@@ -32,7 +33,7 @@ function App() {
     AOS.init();
     AOS.refresh();
 
-    let data = JSON.parse(localStorage.getItem("user") || "[]");
+    let data = JSON.parse(localStorage.getItem("user") || "{}");
     console.log(data);
 
     if (data !== {}) {
@@ -40,12 +41,12 @@ function App() {
         account: data,
         state: true,
       });
-    }
+    }else setCurrentAccount({account:{},state:false})
   }, [setCurrentAccount]);
   return (
     <BrowserRouter>
       <div className="App">
-        <Header></Header>
+        <Header />
         <div style={{ marginTop: "48px" }}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -55,7 +56,8 @@ function App() {
             <Route path="/doctor/:id" element={<Doctor />} />
             <Route path="/service/:id" element={<ServiceDetail />} />
             <Route path="/faq" element={<FAQ />} />
-            <Route path="/login" element={<LoginAndRegister />} />
+           <Route path={"/login"} element={<Login />} />
+           <Route path={"/Register"} element={<Register />} />
             <Route path="/patient" element={<Patient />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/article/:id" element={<BlogDetail />} />

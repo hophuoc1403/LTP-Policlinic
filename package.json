@@ -39,7 +39,9 @@
     "sweetpagination": "^1.0.15",
     "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "@react-buddy/ide-toolbox": "^2.2.1",
+    "@react-buddy/palette-mui": "^1.2.2"
   },
   "scripts": {
     "start": "react-scripts start",

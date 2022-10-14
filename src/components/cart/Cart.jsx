@@ -18,6 +18,8 @@ import { useContext } from "react";
 import { StoreContext } from "../../GlobalState";
 import { toast } from "react-toastify";
 import Sweetpagination from "sweetpagination";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCartPlus, faInfo} from "@fortawesome/free-solid-svg-icons";
 
 const cx = classNames.bind(styles);
 
@@ -70,43 +72,55 @@ function Cart() {
         <div className="row pt-5">
           {currentPageData.map((item) => (
             <div className="col-lg-4 col-md-6 col-sm-12">
-              <Card className={cx("cart")} sx={{ maxWidth: 345 }}>
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={item.images}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {item.name}
-                  </Typography>
-                  <Typography
-                    gutterBottom
-                    sx={{ fontWeight: "bold" }}
-                    variant="span"
-                    component="div"
-                  >
-                    {numberWithCommas(item.price)}$
-                  </Typography>
-                </CardContent>
-                <CardActions sx={{ margin: "0 auto", textAlign: "center" }}>
-                  <Button
-                    onClick={() => addProductCart(item)}
-                    variant="contained"
-                    size="small"
-                  >
-                    {/* <Link className="link" to="/cart"> */}
-                    Add Cart
-                    {/* </Link> */}
-                  </Button>
-                  <Link className={"link"} to={"/checkout"} >
-                      <Button variant="outlined" size="small">
-                          Buy Now
-                      </Button>
-                  </Link>
-                </CardActions>
-              </Card>
+                <div className={cx("wrapper")}>
+                    <div className={cx("container")}>
+                        <div className={cx("top")}>
+                            <img className={"card-img-h"} src={item.images} alt="" />
+                        </div>
+                        <div className={cx("bottom")}>
+                            <div className={cx("left")}>
+                                <div className={cx("details")}>
+                                    <h1>{item.name}</h1>
+                                    <p>${numberWithCommas(item.price)}</p>
+                                </div>
+                                <div className={cx("buy")}><FontAwesomeIcon className={cx("material-icons")} icon={faCartPlus} /></div>
+                            </div>
+                            <div className={cx("right")}>
+                                <div className={cx("done")}><i className={cx("material-icons")}>done</i></div>
+                                <div className={cx("details")}>
+                                    <h1>Chair</h1>
+                                    <p>Added to your cart</p>
+                                </div>
+                                <div className={cx("remove")}><i className={cx("material-icons")}>clear</i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={cx("inside")}>
+                        <div className={cx("icon")}><FontAwesomeIcon className={cx("material-icons")} icon={faInfo} /></div>
+                        <div className={cx("contents")}>
+                            <table>
+                                <tr>
+                                    <th>Ingredients</th>
+                                    <th>affect</th>
+                                </tr>
+                                <tr>
+                                    <td>paracetamol </td>
+                                    <td>normal</td>
+                                </tr>
+                                <tr>
+                                    <td>ascorbic</td>
+                                    <td>immune system</td>
+                                </tr>
+                                <tr>
+                                    <td>atorvastatin</td>
+                                    <td>digest system</td>
+                                </tr>
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
           ))}
         </div>
@@ -117,6 +131,7 @@ function Cart() {
         dataPerPage={6}
         navigation={true}
       />
+
     </>
   );
 }
